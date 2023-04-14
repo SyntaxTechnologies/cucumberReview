@@ -1,7 +1,7 @@
 Feature: test the login functionality
 
   Scenario: validate admin login
-    Given the user navigates to the url
+#    Given the user navigates to the url
     When user enters a valid email and password
     And clicks on Login Button
     Then the user is logged in
@@ -31,3 +31,14 @@ Feature: test the login functionality
     When user enters a username "Admin" and password ""
     And clicks on Login Button
     Then the user is not logged in
+
+
+    Scenario Outline:validate the wrong credentials error message
+      When user enters the "<username>" and "<password>"
+      And clicks on Login Button
+      Then user see a message "<errorMsg>"
+      Examples:
+      |username | password| errorMsg|
+      |adminx   | ssdad   | invalidCredentials|
+      |admin2   | abra   | invalidCredentials|
+      |admin3   | cadbra   | invalidCredentials|
