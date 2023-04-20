@@ -39,6 +39,6 @@ Feature: test the login functionality
       Then user see a message "<errorMsg>"
       Examples:
       |username | password| errorMsg|
-      |adminx   | ssdad   | invalidCredentials|
+      |    |     | invalidCredentials|
       |admin2   | abra   | invalidCredentials|
       |admin3   | cadbra   | invalidCredentials|
